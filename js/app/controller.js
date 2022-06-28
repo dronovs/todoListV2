@@ -46,10 +46,9 @@ function controller (view, model, config) {
         if (event.target.className === 'data-delete-btn') {
             const savedData = model.getData();
             model.removeDataFromDB(savedData);
+            view.removeTemplate();
         }
-        view.removeTemplate();
         if(model.getData().length === 0) localStorage.clear();
-
     }
 
 
